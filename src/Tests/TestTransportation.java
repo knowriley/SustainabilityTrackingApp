@@ -1,6 +1,6 @@
 package Tests;
 
-import model.Transportation;
+import PathsToSustainability.Transportation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

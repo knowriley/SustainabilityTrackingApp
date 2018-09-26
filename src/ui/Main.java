@@ -1,9 +1,9 @@
 package ui;
 import java.util.Scanner;
-import model.Food;
-import model.Clothes;
-import model.Transportation;
-import model.Education;
+import PathsToSustainability.Food;
+import PathsToSustainability.Clothes;
+import PathsToSustainability.Transportation;
+import PathsToSustainability.Education;
 
 public class Main {
     private Food food;

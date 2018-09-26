@@ -1,5 +1,10 @@
 package ui;
 
+import PathsToSustainability.Transportation;
+import PathsToSustainability.Food;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class User {
 //    String name;
 //    int foodPoints;

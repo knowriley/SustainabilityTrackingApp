@@ -1,6 +1,6 @@
 package Tests;
 
-import model.Food;
+import PathsToSustainability.Food;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
