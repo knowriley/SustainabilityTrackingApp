@@ -5,11 +5,12 @@ import PathsToSustainability.Clothes;
 import PathsToSustainability.Transportation;
 import PathsToSustainability.Education;
 
-public class SustainableAF {
-    //private Food food;
-//    private Transportation transport;
-//    private Clothes clothing;
-//    private Education education;
+public class Main {
+    private Food food;
+    private Transportation transport;
+    private Clothes clothing;
+    private Education education;
+    int pointValue = 0;
     Scanner scanner = new Scanner(System.in);
 
     public void execute() {
@@ -22,13 +23,19 @@ public class SustainableAF {
             System.out.println("d) Educated Others");
             userSays = scanner.nextLine();
             if (userSays.equals("a")) {
-                Food.createFood();
+                Food f = new Food();
+                f.createFood();
+            }
+            if (userSays.equals("b")){
+                Transportation t = new Transportation();
+                t.createTransportation();
             }
         }
     }
 
+
     public static void main(String[] args) {
-        SustainableAF instance = new SustainableAF();
+        Main instance = new Main();
         instance.execute();
     }
 
