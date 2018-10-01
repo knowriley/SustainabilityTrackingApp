@@ -1,4 +1,4 @@
-package PathsToSustainability;
+package model;
 
 public class Education {
     boolean isSelf;
