@@ -28,6 +28,9 @@ public class Main {
             System.out.println("Congrats, " + user.name + " on starting your sustainable journey!");}
             if (userSays.equals("b")){
             user.load("SavedUsers");
+            System.out.println("test");
+
+
             }
 
         while (true) {
