@@ -25,13 +25,11 @@ public class Main {
         if (userSays.equals("a")){
             System.out.println("What is your name?");
             user.name = scanner.nextLine();
-            System.out.println("Congrats, " + user.name + " on starting your sustainable journey!");}
-            if (userSays.equals("b")){
-            user.load("SavedUsers");
-            System.out.println("test");
-
-
-            }
+            System.out.println("Congrats, " + user.name + " on starting your sustainable journey!");
+        } else if (userSays.equals("b")){
+            user.load("saved_users.txt");
+            System.out.println("Welcome back, " + user.name + " ");
+        }
 
         while (true) {
             System.out.println("What did you do today to make a difference?");
@@ -50,51 +48,64 @@ public class Main {
                 if (userSays.equals("a")) {
                     f = new Food();
                     f.setPointValue(2);
-                    //add to users list of accomplishments
-                    System.out.println("Congrats! Would you like to add another accomplishment?");
+                    user.addFoodPoints(f.getPointValue());
+                    user.addTotalPoints(f.getPointValue());
+                    user.accomplishments.add(f);
+                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " .");
+                    System.out.println("Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
                         new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
                     }
-                    if (userSays.equals("no")) {
+                    else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
-                        user.save("SavedUsers");
+                        user.save("saved_users.txt");
                         break;
                     }
                 }
                 if (userSays.equals("b")) {
                     f = new Food();
                     f.setPointValue(5);
-                    //add to users list of accomplishments
+                    user.addFoodPoints(f.getPointValue());
+                    user.addTotalPoints(f.getPointValue());
+                    user.accomplishments.add(f);
+                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    System.out.println("Would you like to add another accomplishment?");
                     System.out.println("Congrats! Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
                         new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
                     }
-                    if (userSays.equals("no")) {
+                    else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
+                        user.save("saved_users.txt");
                         break;
                     }
                 }
                 if (userSays.equals("c")) {
                     f = new Food();
                     f.setPointValue(10);
-                    //add to users list of accomplishments
+                    user.addFoodPoints(f.getPointValue());
+                    user.addTotalPoints(f.getPointValue());
+                    user.accomplishments.add(f);
+                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    System.out.println("Would you like to add another accomplishment?");
                     System.out.println("Congrats! Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
                         new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
                     }
-                    if (userSays.equals("no")) {
+                    else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
+                        user.save("saved_users.txt");
                         break;
                     }
                 }
             }
-            if (userSays.equals("b")){ }
-            if (userSays.equals("c")){ }
-            if (userSays.equals("d")){ }
-            if (userSays.equals("e")){ }
+            else if (userSays.equals("b")){ }
+            else if (userSays.equals("c")){ }
+            else if (userSays.equals("d")){ }
+            else if (userSays.equals("e")){ }
 
                 }
             }

@@ -21,7 +21,7 @@ public class User implements Loadable, Saveable{
     private List<User> listofUser;
 
     public User(){
-        name = "test";
+        name = "";
         accomplishments = new ArrayList();
         totalPoints = 0;
         foodPoints = 0;
@@ -33,10 +33,9 @@ public class User implements Loadable, Saveable{
 
     @Override
     public void save(String filename) throws IOException {
-        FileWriter fileWriter = new FileWriter(filename);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
+        PrintWriter printWriter = new PrintWriter(filename, "UTF-8");
 
-             printWriter.println("this.name" + ";" + String.valueOf(this.totalPoints) + ";" + String.valueOf(this.foodPoints) + ";" +
+             printWriter.println(this.name + ";" + String.valueOf(this.totalPoints) + ";" + String.valueOf(this.foodPoints) + ";" +
                      String.valueOf(this.transportationPoints) + ";" + String.valueOf(this.clothesPoints) + ";" +
                      String.valueOf(this.educationPoints));
 
@@ -45,7 +44,6 @@ public class User implements Loadable, Saveable{
 
     @Override
     public void load(String filename) throws IOException {
-        FileWriter fileWriter = new FileWriter(filename);
         List<String> lines = Files.readAllLines(Paths.get(filename));
         for (String line : lines) {
             ArrayList<String> partsOfLine = split(line);
@@ -56,12 +54,36 @@ public class User implements Loadable, Saveable{
             this.clothesPoints = Integer.parseInt(partsOfLine.get(4));
             this.educationPoints = Integer.parseInt(partsOfLine.get(5));
         }
-
-        fileWriter.close();
     }
 
     public static ArrayList<String> split(String line){
         String[] splits = line.split(";");
         return new ArrayList<>(Arrays.asList(splits));
     }
+
+    public void addFoodPoints(int points){
+        this.foodPoints = foodPoints + points;
+    }
+
+    public void addTransportationPoints(int points){
+        this.transportationPoints = transportationPoints + points;
+    }
+
+    public void addClothesPoints(int points){
+        this.clothesPoints = clothesPoints + points;
+    }
+
+    public void addEducationPoints(int points){
+        this.transportationPoints = transportationPoints + points;
+    }
+
+    public void addTotalPoints(int points){
+        this.totalPoints = totalPoints + points;
+    }
+
+    public int getTotalPoints(){
+        return this.totalPoints;
+    }
+
+
 }
