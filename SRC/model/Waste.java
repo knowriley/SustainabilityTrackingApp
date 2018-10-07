@@ -10,7 +10,7 @@ public class Waste extends Accomplishment implements HasResources {
     }
 
     @Override
-    public void learnMore(){
+    public void learnMore(){ //TODO: How do I make this print out. What would the signature be?
         System.out.println("http://greenactioncentre.ca/reduce-your-waste/why-should-i-compost/");
         System.out.println("https://www.sustainability.vic.gov.au/You-and-Your-Home/Waste-and-recycling/Recycling/Why-recycle");
     }

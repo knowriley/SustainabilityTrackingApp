@@ -17,17 +17,17 @@ public class Food extends Accomplishment implements Local, HasResources {
     //MODIFIES: this
     //EFFECTS: sets location of local purchase to location
     @Override
-    public void supported(String location){
+    public void fromLocal(String location){
        this.local = location;
     }
 
    @Override
    public String getSupported(){
-        return "";
+        return this.local;
    }
 
     @Override
-    public void learnMore(){
+    public void learnMore(){ //TODO: How do I make this print out. What would the signature be?
         System.out.println("https://www.independent.co.uk/life-style/health-and-families/veganism-environmental-impact-planet-reduced-plant-based-diet-humans-study-a8378631.html");
         System.out.println("https://www.mcgill.ca/foodservices/sustainability/green/local");
     }

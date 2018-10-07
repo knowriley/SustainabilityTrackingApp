@@ -12,14 +12,14 @@ public class TestClothes {
 
     @BeforeEach
     public void testSetUp(){
-        Clothes testClothes = new Clothes();
-        testString = "testString";
-
+        testClothes = new Clothes();
+        testString = "clothes test";
     }
 
     @Test
-    public void testSupported(){
-      //assertEquals(testString, testClothes.getsupported(testString));
-
+    public void testFromLocal(){
+        assertEquals("", testClothes.getSupported());
+        testClothes.fromLocal(testString);
+        assertEquals(testString, testClothes.getSupported());
     }
 }

@@ -1,9 +1,10 @@
 package model;
 
-public abstract class Accomplishment {
+import Interfaces.HasResources;
+
+public abstract class Accomplishment implements HasResources{
     protected int pointValue;
     protected String type;
-
 
     public void setType(String type) {
         this.type = type;
@@ -20,6 +21,7 @@ public abstract class Accomplishment {
     public void setPointValue(int pointValue) {
         this.pointValue = pointValue;
     }
+
 
     }
 

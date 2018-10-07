@@ -19,9 +19,9 @@ public class Main {
 
     public void execute() throws IOException {
         String userSays = "";
+        user = new User();
         System.out.println("Are you an a) new user or b) old user?");
         userSays = scanner.nextLine();
-        user = new User();
         if (userSays.equals("a")){
             System.out.println("What is your name?");
             user.name = scanner.nextLine();
@@ -29,6 +29,19 @@ public class Main {
         } else if (userSays.equals("b")){
             user.load("saved_users.txt");
             System.out.println("Welcome back, " + user.name + " ");
+            System.out.println("Would you like to...");
+            System.out.println("a) Add an accomplishment");
+            System.out.println("b) View profile");
+            userSays = scanner.nextLine();
+            if (userSays.equals("b")){
+                System.out.println("Name: " + user.name);
+                // list of accomplishments
+                System.out.println("Total Points: " + user.totalPoints);
+                System.out.println("Food Points: " + user.foodPoints);
+                System.out.println("Transportation Points: " + user.transportationPoints);
+                System.out.println("Clothes Points: " + user.clothesPoints);
+                System.out.println("Education Points: " + user.educationPoints);
+            }
         }
 
         while (true) {
@@ -50,7 +63,7 @@ public class Main {
                     f.setPointValue(2);
                     user.addFoodPoints(f.getPointValue());
                     user.addTotalPoints(f.getPointValue());
-                    user.accomplishments.add(f);
+                    user.accomplishments.add(f); //TODO: What does this mean? How do I fix?
                     System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " .");
                     System.out.println("Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
