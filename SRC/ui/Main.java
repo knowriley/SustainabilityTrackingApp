@@ -1,18 +1,15 @@
 package ui;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
-import ui.User;
 
 import model.*;
 
 public class Main {
-    private Food f;
-    private Transportation t;
-    private Clothes c;
-    private Education e;
-    private Waste w;
+    private Accomplishment food;
+    private Accomplishment transportation;
+    private Accomplishment clothes;
+    private Accomplishment education;
+    private Accomplishment waste;
     int pointValue = 0;
     User user;
     Scanner scanner = new Scanner(System.in);
@@ -24,23 +21,23 @@ public class Main {
         userSays = scanner.nextLine();
         if (userSays.equals("a")){
             System.out.println("What is your name?");
-            user.name = scanner.nextLine();
-            System.out.println("Congrats, " + user.name + " on starting your sustainable journey!");
+            user.setName(scanner.nextLine());
+            System.out.println("Congrats, " + user.getName() + " on starting your sustainable journey!");
         } else if (userSays.equals("b")){
             user.load("saved_users.txt");
-            System.out.println("Welcome back, " + user.name + " ");
+            System.out.println("Welcome back, " + user.getName() + " ");
             System.out.println("Would you like to...");
             System.out.println("a) Add an accomplishment");
             System.out.println("b) View profile");
             userSays = scanner.nextLine();
             if (userSays.equals("b")){
-                System.out.println("Name: " + user.name);
-                // list of accomplishments
-                System.out.println("Total Points: " + user.totalPoints);
-                System.out.println("Food Points: " + user.foodPoints);
-                System.out.println("Transportation Points: " + user.transportationPoints);
-                System.out.println("Clothes Points: " + user.clothesPoints);
-                System.out.println("Education Points: " + user.educationPoints);
+                System.out.println("Name: " + user.getName());
+                System.out.println("Accomplishments: " + user.getAccomplishments());
+                System.out.println("Total Points: " + user.getTotalPoints());
+                System.out.println("Food Points: " + user.getFoodPoints());
+                System.out.println("Transportation Points: " + user.getTransportationPoints());
+                System.out.println("Clothes Points: " + user.getClothesPoints());
+                System.out.println("Education Points: " + user.getEducationPoints());
             }
         }
 
@@ -59,16 +56,17 @@ public class Main {
                 System.out.println("c) participate in MeatlessMonday?");
                 userSays = scanner.nextLine();
                 if (userSays.equals("a")) {
-                    f = new Food();
-                    f.setPointValue(2);
-                    user.addFoodPoints(f.getPointValue());
-                    user.addTotalPoints(f.getPointValue());
-                    user.accomplishments.add(f); //TODO: What does this mean? How do I fix?
-                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " .");
+                    food = new Food();
+                    food.setPointValue(2);
+                    user.addFoodPoints(food.getPointValue());
+                    user.addTotalPoints(food.getPointValue());
+                    user.getAccomplishments().add(food); //TODO: What does this mean? How do I fix?
+                    food.motivationStatement();
+                    System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " .");
                     System.out.println("Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
-                        new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
+                        continue;
                     }
                     else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
@@ -77,17 +75,17 @@ public class Main {
                     }
                 }
                 if (userSays.equals("b")) {
-                    f = new Food();
-                    f.setPointValue(5);
-                    user.addFoodPoints(f.getPointValue());
-                    user.addTotalPoints(f.getPointValue());
-                    user.accomplishments.add(f);
-                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    food = new Food();
+                    food.setPointValue(5);
+                    user.addFoodPoints(food.getPointValue());
+                    user.addTotalPoints(food.getPointValue());
+                    user.getAccomplishments().add(food);
+                    food.motivationStatement();
+                    System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                     System.out.println("Would you like to add another accomplishment?");
-                    System.out.println("Congrats! Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
-                        new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
+                        continue;
                     }
                     else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
@@ -96,17 +94,17 @@ public class Main {
                     }
                 }
                 if (userSays.equals("c")) {
-                    f = new Food();
-                    f.setPointValue(10);
-                    user.addFoodPoints(f.getPointValue());
-                    user.addTotalPoints(f.getPointValue());
-                    user.accomplishments.add(f);
-                    System.out.println("Congrats, " + user.name + "! You have earned " + f.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    food = new Food();
+                    food.setPointValue(10);
+                    user.addFoodPoints(food.getPointValue());
+                    user.addTotalPoints(food.getPointValue());
+                    food.motivationStatement();
+                    user.getAccomplishments().add(food);
+                    System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                     System.out.println("Would you like to add another accomplishment?");
-                    System.out.println("Congrats! Would you like to add another accomplishment?");
                     userSays = scanner.nextLine();
                     if (userSays.equals("yes")) {
-                        new Main().execute(); //TODO: How do I make this go back to the top of the loop instead?
+                        continue;
                     }
                     else if (userSays.equals("no")) {
                         System.out.println("No worries! Congrats on moving one step closer to sustainability!");
@@ -115,7 +113,50 @@ public class Main {
                     }
                 }
             }
-            else if (userSays.equals("b")){ }
+            else if (userSays.equals("b")){
+                System.out.println("Great! Did you...");
+                System.out.println("a) walk or bike.");
+                System.out.println("b) take public transport.");
+                userSays = scanner.nextLine();
+                if (userSays.equals("a")){
+                    transportation = new Transportation();
+                    transportation.setPointValue(3);
+                    user.addTransportationPoints(transportation.getPointValue());
+                    user.addTotalPoints(transportation.getPointValue());
+                    transportation.motivationStatement();
+                    user.getAccomplishments().add(transportation);
+                    System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    System.out.println("Would you like to add another accomplishment?");
+                    userSays = scanner.nextLine();
+                    if (userSays.equals("yes")) {
+                        continue;
+                    }
+                    else if (userSays.equals("no")) {
+                        System.out.println("No worries! Congrats on moving one step closer to sustainability!");
+                        user.save("saved_users.txt");
+                        break;
+                    }
+                }
+                else if (userSays.equals("b")){
+                    transportation = new Transportation();
+                    transportation.setPointValue(2);
+                    user.addTransportationPoints(transportation.getPointValue());
+                    user.addTotalPoints(transportation.getPointValue());
+                    transportation.motivationStatement();
+                    user.getAccomplishments().add(transportation);
+                    System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
+                    System.out.println("Would you like to add another accomplishment?");
+                    userSays = scanner.nextLine();
+                    if (userSays.equals("yes")) {
+                        continue;
+                    }
+                    else if (userSays.equals("no")) {
+                        System.out.println("No worries! Congrats on moving one step closer to sustainability!");
+                        user.save("saved_users.txt");
+                        break;
+                    }
+                }
+            }
             else if (userSays.equals("c")){ }
             else if (userSays.equals("d")){ }
             else if (userSays.equals("e")){ }

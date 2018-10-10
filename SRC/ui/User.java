@@ -15,15 +15,15 @@ import java.util.List;
 // what about a list of passions/CareCause board?
 
 public class User implements Loadable, Saveable{
-    String name;
-    int foodPoints;
-    int transportationPoints;
-    int educationPoints;
-    int clothesPoints;
-    int totalPoints;
-    List accomplishments;
+    private String name;
+    private int foodPoints;
+    private int transportationPoints;
+    private int educationPoints;
+    private int clothesPoints;
+    private int totalPoints;
+    private List accomplishments;
 
-    public User(){ //TODO: Do I want my constructor to take parameters or have fields?
+    public User(){
         name = "";
         accomplishments = new ArrayList();
         totalPoints = 0;
@@ -33,16 +33,17 @@ public class User implements Loadable, Saveable{
         educationPoints = 0;
     }
 
-
-    @Override
     // TODO: How do I also save a list (ex: accomplishments): think about how u want it written then write it
     public void save(String filename) throws IOException {
         PrintWriter printWriter = new PrintWriter(filename, "UTF-8");
-
-             printWriter.println(this.name + ";" + String.valueOf(this.totalPoints) + ";" + String.valueOf(this.foodPoints) + ";" +
-                     String.valueOf(this.transportationPoints) + ";" + String.valueOf(this.clothesPoints) + ";" +
-                     String.valueOf(this.educationPoints));
-
+            printWriter.println("[" +
+                    this.name + ";" +
+                    String.valueOf(this.accomplishments) + ";" +
+                    String.valueOf(this.totalPoints) + ";" +
+                    String.valueOf(this.foodPoints) + ";" +
+                    String.valueOf(this.transportationPoints) + ";" +
+                    String.valueOf(this.clothesPoints) + ";" +
+                    String.valueOf(this.educationPoints) + "]");
         printWriter.close();
     }
 
@@ -65,7 +66,7 @@ public class User implements Loadable, Saveable{
         String[] splits = line.split(";");
         return new ArrayList<>(Arrays.asList(splits));
     }
-    
+
     public void addFoodPoints(int points){
         this.foodPoints = foodPoints + points;
     }
@@ -86,9 +87,38 @@ public class User implements Loadable, Saveable{
         this.totalPoints = totalPoints + points;
     }
 
+    //GETTERS
     public int getTotalPoints(){
         return this.totalPoints;
     }
 
+    public String getName(){
+        return this.name;
+    }
 
+    public List getAccomplishments(){
+        return this.accomplishments;
+    }
+
+    public int getFoodPoints(){
+        return this.foodPoints;
+    }
+
+    public int getTransportationPoints(){
+        return this.transportationPoints;
+    }
+
+    public int getClothesPoints(){
+        return this.clothesPoints;
+    }
+
+    public int getEducationPoints(){
+        return this.educationPoints;
+    }
+
+
+    //SETTERS
+    public void setName(String name){
+        this.name = name;
+    }
 }

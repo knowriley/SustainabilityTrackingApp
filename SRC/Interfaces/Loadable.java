@@ -1,8 +1,10 @@
 package Interfaces;
 
+import ui.User;
+
 import java.io.IOException;
 
 public interface Loadable {
 
-    public void load(String filename) throws IOException;
+    public User load(String filename) throws IOException;
 }
