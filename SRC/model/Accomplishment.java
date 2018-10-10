@@ -2,7 +2,10 @@ package model;
 
 import Interfaces.HasResources;
 
+import java.util.Date;
+
 public abstract class Accomplishment implements HasResources{
+    protected String name;
     protected int pointValue;
     protected String type;
 
@@ -22,6 +25,11 @@ public abstract class Accomplishment implements HasResources{
         this.pointValue = pointValue;
     }
 
+    public void setName(String name) { this.name = name; }
+
+    public String getName(){ return this.name; }
+
+    public abstract void motivationStatement();
 
     }
 

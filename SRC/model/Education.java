@@ -21,4 +21,10 @@ public class Education extends Accomplishment implements HasResources {
 
     }
 
+    @Override
+    public void motivationStatement(){
+        System.out.println("The best way to learn, is to teach. good job!");
+    }
+
+
 }

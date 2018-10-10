@@ -14,7 +14,7 @@ import java.util.List;
 // What about a new class User manager so I can have a list of Users
 // what about a list of passions/CareCause board?
 
-public class User implements Loadable, Saveable{
+public class User{
     private String name;
     private int foodPoints;
     private int transportationPoints;
@@ -33,39 +33,6 @@ public class User implements Loadable, Saveable{
         educationPoints = 0;
     }
 
-    // TODO: How do I also save a list (ex: accomplishments): think about how u want it written then write it
-    public void save(String filename) throws IOException {
-        PrintWriter printWriter = new PrintWriter(filename, "UTF-8");
-            printWriter.println("[" +
-                    this.name + ";" +
-                    String.valueOf(this.accomplishments) + ";" +
-                    String.valueOf(this.totalPoints) + ";" +
-                    String.valueOf(this.foodPoints) + ";" +
-                    String.valueOf(this.transportationPoints) + ";" +
-                    String.valueOf(this.clothesPoints) + ";" +
-                    String.valueOf(this.educationPoints) + "]");
-        printWriter.close();
-    }
-
-    @Override
-    public User load(String filename) throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get(filename));
-        for (String line : lines) {
-            ArrayList<String> partsOfLine = split(line);
-            this.name = partsOfLine.get(0);
-            this.totalPoints = Integer.parseInt(partsOfLine.get(1));
-            this.foodPoints = Integer.parseInt(partsOfLine.get(2));
-            this.transportationPoints = Integer.parseInt(partsOfLine.get(3));
-            this.clothesPoints = Integer.parseInt(partsOfLine.get(4));
-            this.educationPoints = Integer.parseInt(partsOfLine.get(5));
-        }
-        return null;
-    }
-
-    public static ArrayList<String> split(String line){
-        String[] splits = line.split(";");
-        return new ArrayList<>(Arrays.asList(splits));
-    }
 
     public void addFoodPoints(int points){
         this.foodPoints = foodPoints + points;
@@ -120,5 +87,29 @@ public class User implements Loadable, Saveable{
     //SETTERS
     public void setName(String name){
         this.name = name;
+    }
+
+    public void setEducationPoints(int educationPoints) {
+        this.educationPoints = educationPoints;
+    }
+
+    public void setAccomplishments(String accomplishments) {
+        this.accomplishments = accomplishments;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
+
+    public void setFoodPoints(int foodPoints) {
+        this.foodPoints = foodPoints;
+    }
+
+    public void setTransportationPoints(int transportationPoints) {
+        this.transportationPoints = transportationPoints;
+    }
+
+    public void setClothesPoints(int clothesPoints) {
+        this.clothesPoints = clothesPoints;
     }
 }

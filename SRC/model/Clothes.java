@@ -5,7 +5,7 @@ import Interfaces.HasResources;
 
 
 public class Clothes extends Accomplishment implements Local, HasResources {
-    String local;
+    private String local;
 
     public Clothes() {
         type = "Clothes";
@@ -36,6 +36,11 @@ public class Clothes extends Accomplishment implements Local, HasResources {
     @Override
     public void Tips(){
         //basic tips site
+    }
+
+    @Override
+    public void motivationStatement(){
+        System.out.println("Looking fly!");
     }
 
 

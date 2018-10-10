@@ -22,4 +22,10 @@ public class Transportation extends Accomplishment implements HasResources {
 
     }
 
+    @Override
+    public void motivationStatement(){
+        System.out.println("Transport time = me time.");
+    }
+
+
 }

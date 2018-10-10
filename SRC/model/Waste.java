@@ -20,4 +20,10 @@ public class Waste extends Accomplishment implements HasResources {
         System.out.print("https://www.epa.gov/recycle/recycling-basics");
 
     }
+
+    @Override
+    public void motivationStatement(){
+        System.out.println("You did the bare minimum. Congrats!");
+    }
+
 }

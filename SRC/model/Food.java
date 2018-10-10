@@ -5,7 +5,7 @@ import Interfaces.Local;
 import Interfaces.HasResources;
 
 public class Food extends Accomplishment implements Local, HasResources {
-    String local;
+    private String local;
 
     public Food(){
         String type = "Food";
@@ -37,5 +37,11 @@ public class Food extends Accomplishment implements Local, HasResources {
         System.out.println("https://blueandgreentomorrow.com/sustainability/sustainable-eating-going-vegan/");
 
     }
+
+    @Override
+    public void motivationStatement(){
+        System.out.println("Eating sustainably never tasted so GOOD.");
+    }
+
 
 }
