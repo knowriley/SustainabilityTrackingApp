@@ -5,9 +5,8 @@ import Interfaces.HasResources;
 
 public class Transportation extends Accomplishment implements HasResources {
 
-    public Transportation() {
-        String type = "Transportation";
-        pointValue = 0;
+    public Transportation(String type, int pointValue, String description) {
+        super(type, pointValue, description);
     }
 
     @Override
@@ -17,15 +16,9 @@ public class Transportation extends Accomplishment implements HasResources {
     }
 
     @Override
-    public void Tips(){
+    public void tips(){
         // get the bus schedule for user based on zip code
 
     }
-
-    @Override
-    public void motivationStatement(){
-        System.out.println("Transport time = me time.");
-    }
-
 
 }

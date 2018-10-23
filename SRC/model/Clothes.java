@@ -7,11 +7,9 @@ import Interfaces.HasResources;
 public class Clothes extends Accomplishment implements Local, HasResources {
     private String local;
 
-    public Clothes() {
-        type = "Clothes";
-        pointValue = 0;
+    public Clothes(String type, int pointValue, String description) {
+        super(type, pointValue, description);
         local = "";
-
     }
 
     //MODIFIES: this
@@ -34,14 +32,10 @@ public class Clothes extends Accomplishment implements Local, HasResources {
     }
 
     @Override
-    public void Tips(){
+    public void tips(){
         //basic tips site
     }
-
-    @Override
-    public void motivationStatement(){
-        System.out.println("Looking fly!");
-    }
+    
 
 
 }

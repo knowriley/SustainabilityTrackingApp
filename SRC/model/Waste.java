@@ -4,9 +4,8 @@ import Interfaces.HasResources;
 
 public class Waste extends Accomplishment implements HasResources {
 
-    public Waste() {
-        String type = "Waste";
-        pointValue = 0;
+    public Waste(String type, int pointValue, String description) {
+        super(type, pointValue, description);
     }
 
     @Override
@@ -16,14 +15,9 @@ public class Waste extends Accomplishment implements HasResources {
     }
 
     @Override
-    public void Tips(){
+    public void tips(){
         System.out.print("https://www.epa.gov/recycle/recycling-basics");
 
-    }
-
-    @Override
-    public void motivationStatement(){
-        System.out.println("You did the bare minimum. Congrats!");
     }
 
 }

@@ -4,5 +4,5 @@ public interface HasResources {
 
     public void learnMore();
 
-    public void Tips();
+    public void tips();
 }

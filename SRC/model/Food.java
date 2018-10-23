@@ -7,9 +7,8 @@ import Interfaces.HasResources;
 public class Food extends Accomplishment implements Local, HasResources {
     private String local;
 
-    public Food(){
-        String type = "Food";
-        pointValue = 0;
+    public Food(String type, int pointValue, String description){
+        super(type, pointValue, description);
         local = "";
 
     }
@@ -33,15 +32,14 @@ public class Food extends Accomplishment implements Local, HasResources {
     }
 
     @Override
-    public void Tips(){
+    public void tips(){
         System.out.println("https://blueandgreentomorrow.com/sustainability/sustainable-eating-going-vegan/");
 
     }
 
-    @Override
-    public void motivationStatement(){
-        System.out.println("Eating sustainably never tasted so GOOD.");
-    }
-
-
 }
+
+//IDEAS:
+// - tracker for percentage vegan (how often do you eat vegan a day?
+// - tracker for percentage vegetarian
+// - make trackers based on goals (aka new goal = new tracker)

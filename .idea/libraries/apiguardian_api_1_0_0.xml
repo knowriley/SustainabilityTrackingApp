@@ -5,8 +5,16 @@
       <root url="jar://$PROJECT_DIR$/lib/junit-jupiter-api-5.0.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.0.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/opentest4j-1.0.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-core-2.9.7.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/json-simple-master" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/jackson-core-2.9.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/jackson-core-2.9.7-sources.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/json-simple-master/src/main/java" />
+      <root url="file://$USER_HOME$/Desktop/json-simple-master/src/test/java" />
+    </SOURCES>
   </library>
 </component>
