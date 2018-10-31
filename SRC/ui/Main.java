@@ -16,7 +16,7 @@ public class Main {
     private Accomplishment waste;
     int pointValue = 0;
     private User user;
-    private UserManager userManager = new UserManager();
+    private UserManager userManager = UserManager.getInstance();
     private List<User> savedUsers;
     Scanner scanner = new Scanner(System.in);
 
@@ -32,10 +32,9 @@ public class Main {
             userManager.getUsers().add(user);
             System.out.println("Congrats, " + user.getName() + " on starting your sustainable journey!");
         } else if (userSays.equals("b")){
-            userManager.load("saved_users.txt");
             System.out.println("What is your name?");
             userSays = scanner.nextLine();
-            userManager.findUser(userSays);
+            userManager.load("saved_users.txt", userSays);
             System.out.println("Welcome back, " + user.getName() + " ");
 
         }
@@ -145,19 +144,19 @@ public class Main {
                     userSays = scanner.nextLine();
                     if (userSays.equals("a")) {
                         food = new Food("food", 2, "Ate a vegetarian meal");
-                        user.updateAccomplishment(food);
+                        user.updateAccomplishments(food);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " .");
                         continue;
                     }
                     if (userSays.equals("b")) {
                         food = new Food("food", 5, "Ate a vegan meal");
-                        user.updateAccomplishment(food);
+                        user.updateAccomplishments(food);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     }
                     if (userSays.equals("c")) {
                         food = new Food("food", 10, "participated in MeatlessMonday");
-                        user.updateAccomplishment(food);
+                        user.updateAccomplishments(food);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + food.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     } else throw new NotAnOptionException();
@@ -168,12 +167,12 @@ public class Main {
                     userSays = scanner.nextLine();
                     if (userSays.equals("a")) {
                         transportation = new Transportation("transportation", 3, "Walked or biked");
-                        user.updateAccomplishment(transportation);
+                        user.updateAccomplishments(transportation);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     } else if (userSays.equals("b")) {
                         transportation = new Transportation("transportation", 2, "Took public transport");
-                        user.updateAccomplishment(transportation);
+                        user.updateAccomplishments(transportation);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     } else throw new NotAnOptionException();
@@ -183,7 +182,6 @@ public class Main {
                 } else throw new NotAnOptionException();
 
             } else if (userSays.equals("d")){
-                userManager = new UserManager();
                 userManager.getUsers().add(user);
                 userManager.saveJSONObject();
                 break;
@@ -191,12 +189,6 @@ public class Main {
         }
     }
 
-//    private void updateAccomplishment() {
-//        user.addFoodPoints(food.getPointValue());
-//        user.addTotalPoints(food.getPointValue());
-//        user.getAccomplishments().add(food);
-//        food.motivationStatement();
-//    }
 
     private void showUser() {
         System.out.println("Name: " + user.getName());
@@ -206,6 +198,7 @@ public class Main {
         System.out.println("Food Points: " + user.getFoodPoints());
         System.out.println("Transportation Points: " + user.getTransportationPoints());
         System.out.println("Clothes Points: " + user.getClothesPoints());
+        System.out.println("Waste Points: " + user.getWastePoints());
         System.out.println("Education Points: " + user.getEducationPoints());
     }
 
