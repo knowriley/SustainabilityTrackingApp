@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Tracker {
     private Goal goal;
-    private List<Date> dates = new LinkedList<Date>(); // dates user earned points toward goal
+    private List<Date> dates = new LinkedList<>(); // dates user earned points toward goal
     private int days; // count of dates since making goal
 
     public Tracker(Goal g){
