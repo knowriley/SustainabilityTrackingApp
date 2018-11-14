@@ -1,0 +1,4 @@
+{"FoodPoints":5,"ClothesPoints":0,"EducationPoints":0,"name":"George","accomplishments":[{"Type":"transportation","PointValue":2,"Name":"Took public transport"},{"Type":"food","PointValue":5,"Name":"Ate a vegan meal"}],"TransportationPoints":2,"TotalPoints":7}
+{"FoodPoints":7,"ClothesPoints":0,"EducationPoints":0,"name":"Riley","accomplishments":[{"Type":"food","PointValue":2,"Name":"Ate a vegetarian meal"},{"Type":"food","PointValue":5,"Name":"Ate a vegan meal"}],"TransportationPoints":0,"TotalPoints":7}
+
+

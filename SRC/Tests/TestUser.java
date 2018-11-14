@@ -3,6 +3,7 @@ package Tests;
 import Exceptions.NoEasyGoalException;
 import Exceptions.TooManyGoalsException;
 import model.Goal;
+import model.Type;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import model.User.User;
@@ -13,10 +14,10 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class TestUser {
     User testUser1;
     User testUser2;
-    Goal testGoal1 = new Goal("food", 10);
-    Goal testGoal2 = new Goal("transportation", 47);
-    Goal testGoal3 = new Goal("food", 0);
-    Goal testGoal4 = new Goal("transportation", 1000);
+    Goal testGoal1 = new Goal(Type.FOOD, 10);
+    Goal testGoal2 = new Goal(Type.TRANSPORTATION, 47);
+    Goal testGoal3 = new Goal(Type.FOOD, 0);
+    Goal testGoal4 = new Goal(Type.TRANSPORTATION, 1000);
     //TODO: make an exception where u cannot have more than one goal of the same type
 
 //    @BeforeEach

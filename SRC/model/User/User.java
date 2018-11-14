@@ -1,11 +1,18 @@
 package model.User;
 
+import Observers.MiddleMan;
+import Observers.Observer;
+import Observers.Subject;
+import javafx.beans.Observable;
 import model.Accomplishment.Accomplishment;
 
-// NOTES: maybe add a "goals" functionality(set, track, remove, etc)??
+import java.util.ArrayList;
+import java.util.List;
+
+
 // what about a list of passions/CareCause board?
 
-public class User{
+public class User extends Subject{
     private String name;
     private UserGoals goals;
     private UserAccomplishments accomplishments;
@@ -27,31 +34,38 @@ public class User{
         clothesPoints = 0;
         wastePoints = 0;
         educationPoints = 0;
+        addObserver(new MiddleMan());
     }
+
 
     public void updateFoodPoints(Accomplishment a) {
         addFoodPoints(a.getPointValue());
         addTotalPoints(a.getPointValue());
+        notifyObservers();
     }
 
     public void updateTransportationPoints(Accomplishment a) {
         addTransportationPoints(a.getPointValue());
         addTotalPoints(a.getPointValue());
+        notifyObservers();
     }
 
     public void updateClothesPoints(Accomplishment a) {
         addClothesPoints(a.getPointValue());
         addTotalPoints(a.getPointValue());
+        notifyObservers();
     }
 
     public void updateWastePoints(Accomplishment a) {
         addWastePoints(a.getPointValue());
         addTotalPoints(a.getPointValue());
+        notifyObservers();
     }
 
     public void updateEducationPoints(Accomplishment a) {
         addEducationPoints(a.getPointValue());
         addTotalPoints(a.getPointValue());
+        notifyObservers();
     }
 
 
