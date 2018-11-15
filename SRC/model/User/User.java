@@ -1,15 +1,13 @@
 package model.User;
 
-import javafx.beans.Observable;
 import model.Accomplishment.Accomplishment;
+import ui.Observer;
 
-import java.util.ArrayList;
 import java.util.List;
-
 
 // what about a list of passions/CareCause board?
 
-public class User {
+public class User extends Observable{
     private String name;
     private UserGoals goals;
     private UserAccomplishments accomplishments;
