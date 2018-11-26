@@ -13,6 +13,10 @@ public class Goal {
         pointsEarnedSoFar = 0;
     }
 
+    public void setPointGoal(int i){
+        pointGoal = i;
+    }
+
     //GETTERS
     public Type getType(){ return type; }
     public int getPointGoal(){ return pointGoal; }

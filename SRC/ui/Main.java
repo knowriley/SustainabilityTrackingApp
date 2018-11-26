@@ -143,13 +143,13 @@ public class Main {
                     if (userSays.equals("a")) {
                         transportation = new Transportation(3, "Walked or biked");
                         user.getAccomplishments().updateAccomplishments(transportation);
-                        user.updateFoodPoints(transportation);
+                        user.updateTransportationPoints(transportation);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     } else if (userSays.equals("b")) {
                         transportation = new Transportation(2, "Took public transport");
                         user.getAccomplishments().updateAccomplishments(transportation);
-                        user.updateFoodPoints(transportation);
+                        user.updateTransportationPoints(transportation);
                         System.out.println("Congrats, " + user.getName() + "! You have earned " + transportation.getPointValue() + " points and now have a total of " + user.getTotalPoints() + " points.");
                         continue;
                     } else throw new NotAnOptionException();

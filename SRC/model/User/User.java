@@ -1,13 +1,10 @@
 package model.User;
 
 import model.Accomplishment.Accomplishment;
-import ui.Observer;
-
-import java.util.List;
 
 // what about a list of passions/CareCause board?
 
-public class User extends Observable{
+public class User{
     private String name;
     private UserGoals goals;
     private UserAccomplishments accomplishments;
