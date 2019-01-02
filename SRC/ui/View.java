@@ -114,7 +114,7 @@ public class View extends Application{
             public void handle(ActionEvent event) {
                 activeAccomplishment = new Transportation(2, "Took public transport");
                 activeUser.getAccomplishments().updateAccomplishments(activeAccomplishment);
-                activeUser.updateFoodPoints(activeAccomplishment);
+                activeUser.updateTransportationPoints(activeAccomplishment);
                 decideViewState(primaryStage, State.RETURNHOME);
             }
         });
@@ -129,7 +129,7 @@ public class View extends Application{
             public void handle(ActionEvent event) {
                 activeAccomplishment = new Transportation(3, "Walked or Biked");
                 activeUser.getAccomplishments().updateAccomplishments(activeAccomplishment);
-                activeUser.updateFoodPoints(activeAccomplishment);
+                activeUser.updateTransportationPoints(activeAccomplishment);
                 decideViewState(primaryStage, State.RETURNHOME);
             }
         });
@@ -213,9 +213,6 @@ public class View extends Application{
 
         HBox hBtn = new HBox(userTextField, btn);
         grid.add(hBtn, 1, 1);
-
-
-
     }
 
 
