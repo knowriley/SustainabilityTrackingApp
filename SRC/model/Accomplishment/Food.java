@@ -36,7 +36,6 @@ public class Food extends Accomplishment implements Local, HasResources {
     @Override
     public void tips(){
         System.out.println("https://blueandgreentomorrow.com/sustainability/sustainable-eating-going-vegan/");
-
     }
 
 }
