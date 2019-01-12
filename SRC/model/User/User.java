@@ -4,7 +4,7 @@ import model.Accomplishment.Accomplishment;
 
 // what about a list of passions/CareCause board?
 
-// No it did not.
+//omg
 
 public class User{
     private String name;
