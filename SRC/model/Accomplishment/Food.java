@@ -28,7 +28,7 @@ public class Food extends Accomplishment implements Local, HasResources {
    }
 
     @Override
-    public void learnMore(){ //TODO: How do I make this print out. What would the signature be?
+    public void learnMore(){
         System.out.println("https://www.independent.co.uk/life-style/health-and-families/veganism-environmental-impact-planet-reduced-plant-based-diet-humans-study-a8378631.html");
         System.out.println("https://www.mcgill.ca/foodservices/sustainability/green/local");
     }
@@ -41,7 +41,3 @@ public class Food extends Accomplishment implements Local, HasResources {
 
 }
 
-//IDEAS:
-// - tracker for percentage vegan (how often do you eat vegan a day?
-// - tracker for percentage vegetarian
-// - make trackers based on goals (aka new goal = new tracker)

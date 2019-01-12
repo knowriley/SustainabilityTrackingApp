@@ -16,6 +16,7 @@ public class User{
     private int totalPoints;
 
 
+
     public User(){
         name = "";
         goals = new UserGoals(this);
